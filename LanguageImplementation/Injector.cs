@@ -64,8 +64,25 @@ namespace LanguageImplementation
                 }
                 else
                 {
+                  if (in_param_i >= args.Length)
+                  {
+                    // We have a missing parameter
+                    if (paramInfo.HasDefaultValue)
+                    {
+                      // But it has a default
+                      outParams[out_param_i] = paramInfo.DefaultValue==null ? null : PyNetConverter.Convert(paramInfo.DefaultValue, paramInfo.ParameterType);
+                    }
+                    else
+                    {
+                      throw new Exception("Missing parameter.");
+                    }
+                  }
+                  else
+                  {
                     outParams[out_param_i] = PyNetConverter.Convert(args[in_param_i], paramInfo.ParameterType);
-                    ++in_param_i;
+                  }
+
+                  ++in_param_i;
                 }
             }
 

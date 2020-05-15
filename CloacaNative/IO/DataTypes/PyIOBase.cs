@@ -59,16 +59,12 @@ namespace CloacaNative.IO.DataTypes
       return PyBool.Create(self.Readable());
     }
 
+ 
     [ClassMember]
-    public static PyString readline(PyIOBase self)
+    public static PyString readline(PyIOBase self, PyInteger size = null)
     {
-      return readline(self, PyInteger.Create(-1));
-    }
-
-    [ClassMember]
-    public static PyString readline(PyIOBase self, PyInteger size)
-    {
-      return PyString.Create(self.Readline());
+      if (size==null) size = PyInteger.Create(-1);
+      return PyString.Create(self.Readline(size.number));
     }
 
     [ClassMember]
@@ -173,7 +169,7 @@ namespace CloacaNative.IO.DataTypes
       return _nativeStream.CanRead;
     }
 
-    public virtual string Readline()
+    public virtual string Readline(BigInteger size)
     {
       return "This appears to be working";
     }
