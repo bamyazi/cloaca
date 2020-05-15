@@ -25,11 +25,6 @@ namespace CloacaNative.IO.DataTypes
         private static PyTextIOWrapperClass __instance;
         public static PyTextIOWrapperClass Instance => __instance ?? (__instance = new PyTextIOWrapperClass(null));
 
-        [ClassMember]
-        public static PyString readline(PyTextIOWrapper self)
-        {
-            return self.ReadLine();
-        }
     }
 
     public class PyTextIOWrapper : PyTextIOBase
@@ -44,9 +39,5 @@ namespace CloacaNative.IO.DataTypes
         {
         }
 
-        public PyString ReadLine()
-        {
-            return new PyString("Hello World");
-        }
     }
 }

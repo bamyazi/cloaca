@@ -54,6 +54,9 @@
     <Compile Include="IO\DataTypes\PyRawIoBase.cs" />
     <Compile Include="IO\DataTypes\PyTextIOBase.cs" />
     <Compile Include="IO\DataTypes\PyTextIOWrapper.cs" />
+    <Compile Include="IO\DefaultNativeStdioProvider.cs" />
+    <Compile Include="IO\InputOutputStream.cs" />
+    <Compile Include="INativeStdioProvider.cs" />
     <Compile Include="NativeResourceManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -28,7 +28,6 @@ namespace CloacaNative.IO.DataTypes
         [ClassMember]
         public static void test(PyTextIOBase self)
         {
-            int x = 0;
         }
 
     }
@@ -37,7 +36,6 @@ namespace CloacaNative.IO.DataTypes
     {
         public PyTextIOBase()
         {
-
         }
 
         public PyTextIOBase(PyTypeObject fromType, Handle resourceHandle, Stream nativeStream) 

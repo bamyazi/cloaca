@@ -8,7 +8,7 @@ namespace CloacaNative
 {
   public class Handle
   {
-    public int Descriptor { get; private set; }
+    public long Descriptor { get; private set; }
     public NativeResourceManager ResourceManager { get; private set; }
 
     public Handle(NativeResourceManager resourceManager, int descriptor)
